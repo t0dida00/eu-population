@@ -37,7 +37,7 @@ The user can query data by conditions :  GET `/countries?query={value}`
 
 
 
-- GET `/cities
+- GET `/cities`
   - Returns an object that includes an array of country data and cities belonging to it, status, and message
     - Example object:
     ```json
