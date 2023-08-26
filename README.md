@@ -27,29 +27,47 @@ The user can query data by conditions :  GET `/countries?query={value}`
     
 | Query  | Type   | Description                             | Value sample | Response                                                      | Response sample                                      |
 | ------ | ------ | --------------------------------------- | ------------ | ------------------------------------------------------------ | ---------------------------------------------------- |
-| search | String | To search data by a given string       | FI           | Returns an object that includes an array of country data objects, status, and message | <img width="373" alt="Screenshot 2023-08-27 at 1 09 59" src="https://github.com/t0dida00/eu-population/assets/70305254/4362c676-8d2e-4c31-a7bc-c78f40b6c687">
+| search | String | To search data by a given string <br> <br> Can search by name or countrycode,``` for example: search=esp or search=spain is same the result ```     | FI           | Returns an object that includes an array of country data objects, status, and message | <img width="373" alt="Screenshot 2023-08-27 at 1 09 59" src="https://github.com/t0dida00/eu-population/assets/70305254/4362c676-8d2e-4c31-a7bc-c78f40b6c687">
 | population | Number | To search data by population      |  50000000    | Returns an object that includes an array of country data objects, status, and message | <img width="373" alt="Screenshot 2023-08-27 at 1 09 59" src="https://github.com/t0dida00/eu-population/assets/70305254/b0c9020b-e99a-4e56-978f-2524e81b9a7e">
 | country | String | To search data by countrycode  |  FIN    | Returns an object that includes an array of country data objects, status, and message| <img width="391" alt="Screenshot 2023-08-27 at 1 16 06" src="https://github.com/t0dida00/eu-population/assets/70305254/ad4b97d3-e537-44a8-9cee-89511adf5c04">
 
 * Supports multiple country values, for example `?country=FIN&country=SWE`
 * Supports queries with different conditions, for example `?country=FIN&country=SWE&population=10000000` or `?searcch=FI&population=10000000`
+* The `country` parameter is the three character ISO country code
 
 
 
-
-- GET `/cities?country={CODE}`
-  - Returns an array of city objects belonging to the given country/countries
+- GET `/cities
+  - Returns an object that includes an array of country data and cities belonging to it, status, and message
     - Example object:
     ```json
     {
-      "countrycode": "FIN",
-      "name": "Helsinki",
-      "capital": true,
-      "population": 658864
-    }
+          "status": 1,
+          "message": "Operation success",
+          "data": [
+              {
+              "country": {
+                  "_id": "64e8568a30e596647562da49",
+                  "code": "HUN",
+                  "name": "Hungary",
+                  "flag": "\\uD83C\\uDDED\\uD83C\\uDDFA",
+                  "population": 9749763
+              },
+              "cities": [
+              {
+                  "_id": "64e8567430e596647562d9e0",
+                  "countrycode": "HUN",
+                  "name": "Budapest",
+                  "capital": true,
+                  "population": 1706851
+              }
+                        ]
+            }
+                ]      
+     }
     ```
-  - The `country` parameter is the three character ISO country code
-  - Supports multiple values, for example `?country=FIN&country=SWE`
+* Supports multiple country values, for example `?country=FIN&country=SWE`
+* Supports queries with different conditions, for example `?country=FIN&country=SWE&population=10000000` or `?searcch=FI&population=10000000`
 
 ## Running
 
