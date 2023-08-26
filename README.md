@@ -78,7 +78,7 @@ You can run the backend server either with [npm](https://docs.npmjs.com/) or in 
 1. Install dependencies: `npm install`.
 2. Start the server: `npm start`.
 
-The API can be then accessed at `http://localhost:3001`.
+The API can be then accessed at `http://localhost:3000`.
 
 ### With Docker
 
