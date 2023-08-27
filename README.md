@@ -90,8 +90,6 @@ To create and run the backend container, run in this folder:
 docker compose up
 ```
 
-This will build the image (if it does not exist) and run a container named `population_backend`.
+This will build the image (if it does not exist) and run a container named `eu-population`.
 
-The API can be then accessed at `http://localhost:3001`.
-
-If you are calling the API from another Docker container, you need to create a network (`docker network create <networkName>`) and attach both containers to it (`docker network connect <networkName> <containerName>`). Then the API can be accessed at `http://population_backend:3001`).
+The API can be then accessed at `http://localhost:3000`.
