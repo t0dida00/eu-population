@@ -1,4 +1,4 @@
-const uri = "mongodb+srv://ddkhoa97:ddkhoa97@hatial.x6f8vvf.mongodb.net/newthingsco?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:admin@oamk.z3ezz4i.mongodb.net/eu-population?retryWrites=true&w=majority";
 const mongoose = require('mongoose');
 // connect to your database
 
