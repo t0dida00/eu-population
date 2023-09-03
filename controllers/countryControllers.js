@@ -2,9 +2,17 @@ const Country = require("../models/countryModel")
 const apiResponse = require("../services/apiResponse");
 
 const queryParser = require("../services/queryParser")
+const validQueryParams = ['search', 'country', 'population'];
 
 module.exports = {
     countryList: async (req, res) => {
+
+        const wrongQuery = Object.keys(req.query).filter(param => !validQueryParams.includes(param));
+
+        if (wrongQuery.length > 0) {
+            return apiResponse.notFoundResponse(res, "Oops ! You entered wrong query, let's check again");
+
+        }
 
         const query = queryParser(req.query)
 

@@ -1,4 +1,5 @@
 
+
 function queryParser(query) {
     var options = {}
 
@@ -12,6 +13,7 @@ function queryParser(query) {
         options.countrycode = { $in: codes }
 
     }
+
     options.population = { $gte: population }
     if (searchQuery) {
         options["$or"] = [
@@ -20,7 +22,6 @@ function queryParser(query) {
         ]
     }
 
-    console.log(options)
     return options
 }
 
