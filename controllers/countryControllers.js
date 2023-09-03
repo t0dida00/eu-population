@@ -15,6 +15,10 @@ module.exports = {
 
         const query = queryParser(req.query)
 
+        if (query.errors) {
+            return apiResponse.notFoundResponse(res, query.errors);
+
+        }
         delete query.countrycode
 
         const countries = await Country.find(query)

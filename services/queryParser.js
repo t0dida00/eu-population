@@ -14,6 +14,10 @@ function queryParser(query) {
 
     }
 
+    if (isNaN(population)) {
+        return options = { "errors": "Population should be a number" }
+    }
+
     options.population = { $gte: population }
     if (searchQuery) {
         options["$or"] = [

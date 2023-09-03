@@ -16,6 +16,12 @@ module.exports = {
 
         const query = queryParser(req.query)
 
+        if (query.errors) {
+            return apiResponse.notFoundResponse(res, query.errors);
+
+        }
+
+
         const country_query = query.code ? { code: query.code } : {}
         delete query.code
 
