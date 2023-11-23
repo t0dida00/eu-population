@@ -6,6 +6,15 @@ const router = express.Router();
 
 router.get("/countries", countryControllers.countryList)
 router.get("/countries", countryControllers.countryList)
+
+router.get("/countries", countryControllers.countryList)
+
+router.get("/countries", countryControllers.countryList)
+router.get("/countries", countryControllers.countryList)
+router.get("/countries", countryControllers.countryList)
+router.get("/countries", countryControllers.countryList)
+
+
 router.get("/countries", countryControllers.countryList)
 router.get("/countries", countryControllers.countryList)
 router.get("/countries", countryControllers.countryList)
