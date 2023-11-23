@@ -12,6 +12,13 @@ router.get("/countries", countryControllers.countryList)
 
 router.get("/countries", countryControllers.countryList)
 router.get("/countries", countryControllers.countryList)
-
+router.get("/countries", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
+router.get("/countries123", countryControllers.countryList)
 
 module.exports = router;
